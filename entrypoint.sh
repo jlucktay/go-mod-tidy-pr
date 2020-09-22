@@ -14,6 +14,7 @@ readonly GO_VERSION="${11}"
 readonly DEBUG="${12}"
 readonly DUPLICATE="${13}"
 readonly TIMEZONE="${14}"
+readonly GO_MOD_TOKEN="${15}"
 
 readonly PR_TITLE_PREFIX="go mod tidy at "
 
@@ -70,7 +71,7 @@ export PATH="$PATH":/usr/local/go/bin
 
 install_git_lfs
 
-git config --global url."https://$GITHUB_TOKEN:x-oauth-basic@github.com".insteadOf "https://github.com"
+git config --global url."https://${GO_MOD_TOKEN:-$GITHUB_TOKEN}:x-oauth-basic@github.com".insteadOf "https://github.com"
 
 go mod tidy
 

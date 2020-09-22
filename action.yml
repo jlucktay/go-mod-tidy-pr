@@ -60,6 +60,9 @@ inputs:
   timezone:
     description: Timezone to be used if set (e.g. `Asia/Tokyo`)
     required: false
+  go_mod_token:
+    description: If an alternate token is required to fetch Go module dependencies (e.g. from other private repos)
+    required: false
 
 runs:
   using: docker
@@ -79,3 +82,4 @@ runs:
     - ${{ inputs.debug }}
     - ${{ inputs.duplicate }}
     - ${{ inputs.timezone }}
+    - ${{ inputs.go_mod_token }}

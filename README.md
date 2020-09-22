@@ -46,6 +46,7 @@ jobs:
           # debug: "true"
           # duplicate: "true"
           # timezone: Asia/Tokyo
+          # go_mod_token: ${{ secrets.ALTERNATE_TOKEN }}
 ```
 
 ## Parameters
@@ -84,6 +85,8 @@ jobs:
   * Whether create PullRequest even if it has already existed
 * `timezone`
   * Timezone to be used if set (e.g. `Asia/Tokyo`)
+* `go_mod_token`
+  * If an alternate token is required to fetch Go module dependencies (e.g. from other private repos)
 
 ## Note :warning:
 If you configure Pull Request build on GitHub Action, builds **doesn't trigger** when `go-mod-tidy-pr` creates Pull Request.
