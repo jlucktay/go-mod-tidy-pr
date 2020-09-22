@@ -91,6 +91,7 @@ if [ -z "$DUPLICATE" ]; then
   fi
 fi
 
+git config --global url."https://$GITHUB_TOKEN:x-oauth-basic@github.com".insteadOf "https://github.com"
 git config --global user.email "$GIT_USER_EMAIL"
 git config --global user.name "$GIT_USER_NAME"
 
