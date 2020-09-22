@@ -91,7 +91,10 @@ if [ -z "$DUPLICATE" ]; then
   fi
 fi
 
+# (Re)set the token replacement
+git config --global --unset url."https://${GO_MOD_TOKEN:-$GITHUB_TOKEN}:x-oauth-basic@github.com".insteadOf
 git config --global url."https://$GITHUB_TOKEN:x-oauth-basic@github.com".insteadOf "https://github.com"
+
 git config --global user.email "$GIT_USER_EMAIL"
 git config --global user.name "$GIT_USER_NAME"
 
